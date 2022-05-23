@@ -44,7 +44,6 @@ namespace PersonnelRecordsServer.Controllers
                 };
                 result.History.Add(row);
             }
-
             return Ok(result);
         }
     }
