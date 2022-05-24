@@ -10,8 +10,15 @@ namespace PersonnelRecordsServer.db
     {
         public static explicit operator CompanyApi(Company company)
         {
-            return new CompanyApi { Id = company.Id, Adress = company.Adress, Description = company.Description,
-                Name = company.Name, Owner = company.Owner, Phone = company.Phone, };
+            return new CompanyApi {
+                Id = company.Id,
+                Adress = company.Adress,
+                Description = company.Description,
+                Name = company.Name,
+                Owner = company.Owner,
+                Phone = company.Phone,
+                IsRemuved = company.IsRemuved
+            };
         }
 
         public static explicit operator Company(CompanyApi company)
@@ -23,6 +30,7 @@ namespace PersonnelRecordsServer.db
                 Name = company.Name,
                 Owner = company.Owner,
                 Phone = company.Phone,
+                IsRemuved = company.IsRemuved
             };
         }
 

@@ -21,7 +21,7 @@ namespace PersonnelRecordsServer.db
         public string Sex { get; set; }
         public DateTime? DateOfBirth { get; set; }
         public string Registration { get; set; }
-        public bool? IsRemuved { get; set; }
+        public int IsRemuved { get; set; }
 
         public virtual ICollection<Worker> Workers { get; set; }
     }

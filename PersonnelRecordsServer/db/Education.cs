@@ -18,7 +18,7 @@ namespace PersonnelRecordsServer.db
         public string Speciality { get; set; }
         public DateTime? ReceiptDate { get; set; }
         public DateTime ExpirationDate { get; set; }
-        public bool? IsRemuved { get; set; }
+        public int IsRemuved { get; set; }
 
         public virtual ICollection<Worker> Workers { get; set; }
     }

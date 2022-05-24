@@ -19,7 +19,8 @@ namespace PersonnelRecordsServer.db
                 EducationId = worker.EducationId,
                 Email = worker.Email,
                 PassportId = worker.PassportId,
-                Phone = worker.Phone
+                Phone = worker.Phone,
+                IsRemuved = worker.IsRemuved
             };
         }
 
@@ -34,7 +35,8 @@ namespace PersonnelRecordsServer.db
                 EducationId = worker.EducationId,
                 Email = worker.Email,
                 PassportId = worker.PassportId,
-                Phone = worker.Phone
+                Phone = worker.Phone,
+                IsRemuved = worker.IsRemuved
             };
         }
     }

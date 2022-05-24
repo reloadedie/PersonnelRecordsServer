@@ -14,7 +14,7 @@ namespace ModelApi
         public string Note { get; set; }
         public int? ImpactTypeID { get; set; }
         public int? WorkerID { get; set; }
-        public string IsRemuved { get; set; }
+        public int IsRemuved { get; set; }
         public int? StaffingID { get; set; }        
         public DateTime? DateArchive { get; set; }       
        

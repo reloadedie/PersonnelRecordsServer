@@ -15,6 +15,6 @@ namespace ModelApi
         public string Email { get; set; }
         public int? EducationId { get; set; }
         public int? PassportId { get; set; }
-        public int isRemuved { get; set; }
+        public int IsRemuved { get; set; }
     }
 }

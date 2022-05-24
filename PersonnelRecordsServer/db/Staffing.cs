@@ -13,7 +13,7 @@ namespace PersonnelRecordsServer.db
         public int? WorkerId { get; set; }
         public string Note { get; set; }
         public int? CompanyId { get; set; }
-        public bool? IsRemuved { get; set; }
+        public int IsRemuved { get; set; }
 
         public virtual Company Company { get; set; }
         public virtual Worker Worker { get; set; }

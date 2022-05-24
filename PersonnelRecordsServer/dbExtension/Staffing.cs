@@ -17,7 +17,8 @@ namespace PersonnelRecordsServer.db
                 Salary = staffing.Salary,
                 WorkerId = staffing.WorkerId,
                 Note = staffing.Note,
-                CompanyId = staffing.CompanyId
+                CompanyId = staffing.CompanyId,
+                 IsRemuved = staffing.IsRemuved
             };
         }
 
@@ -30,7 +31,8 @@ namespace PersonnelRecordsServer.db
                 Salary = staffing.Salary,
                 WorkerId = staffing.WorkerId,
                 Note = staffing.Note,
-                CompanyId = staffing.CompanyId
+                CompanyId = staffing.CompanyId,
+                IsRemuved = staffing.IsRemuved
             };
         }
     }
