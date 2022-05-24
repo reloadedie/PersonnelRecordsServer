@@ -21,7 +21,7 @@ namespace PersonnelRecordsServer.db
         public string Email { get; set; }
         public int? EducationId { get; set; }
         public int? PassportId { get; set; }
-        public int IsRemuved { get; set; }
+        public int? IsRemuved { get; set; }
 
         public virtual Education Education { get; set; }
         public virtual Passport Passport { get; set; }

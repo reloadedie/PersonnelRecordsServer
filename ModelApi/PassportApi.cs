@@ -16,6 +16,6 @@ namespace ModelApi
         public string Sex { get; set; }
         public DateTime? DateOfBirth { get; set; }
         public string Registration { get; set; }
-        public int IsRemuved { get; set; }
+        public int? IsRemuved { get; set; }
     }
 }
