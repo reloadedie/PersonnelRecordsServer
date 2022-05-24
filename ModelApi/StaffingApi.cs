@@ -13,5 +13,6 @@ namespace ModelApi
         public int? WorkerId { get; set; }
         public string Note { get; set; }
         public int? CompanyId { get; set; }
+        public int isRemuved { get; set; }
     }
 }

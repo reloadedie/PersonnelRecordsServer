@@ -17,6 +17,7 @@ namespace ModelApi
     {
         public CompanyApi Company { get; set; }
         public DateTime? Start { get; set; }
-        public DateTime? End { get; set; }      
+        public DateTime? End { get; set; }
+        public int isRemuved { get; set; }
     }
 }

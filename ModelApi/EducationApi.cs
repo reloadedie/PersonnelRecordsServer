@@ -12,5 +12,6 @@ namespace ModelApi
         public string Speciality { get; set; }
         public DateTime? ReceiptDate { get; set; }
         public DateTime ExpirationDate { get; set; }
+        public int isRemuved { get; set; }
     }
 }
