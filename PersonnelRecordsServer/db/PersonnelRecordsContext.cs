@@ -31,7 +31,7 @@ namespace PersonnelRecordsServer.db
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                optionsBuilder.UseSqlServer("Integrated Security=True; Server=LAPTOP-VJ8HF1QJ\\SQLEXPRESS; Initial Catalog=PersonnelRecords;");
+                optionsBuilder.UseSqlServer("Server=HP-SURFACE\\SQLEXPRESS;Database=PersonnelRecords;Trusted_Connection=True;");
             }
         }
 
@@ -45,48 +45,31 @@ namespace PersonnelRecordsServer.db
 
                 entity.Property(e => e.Id).HasColumnName("id");
 
-                entity.Property(e => e.DateEnd)
-                    .HasColumnType("date")
-                    .HasColumnName("dateEnd");
+                entity.Property(e => e.DateArchive)
+                    .HasColumnType("datetime")
+                    .HasColumnName("dateArchive");
 
-                entity.Property(e => e.DateStart)
-                    .HasColumnType("date")
-                    .HasColumnName("dateStart");
+                entity.Property(e => e.IdRecord).HasColumnName("idRecord");
 
-                entity.Property(e => e.ImpactTypeId).HasColumnName("impactTypeID");
+                entity.Property(e => e.ImpactTypeID).HasColumnName("impactTypeID");
 
-                entity.Property(e => e.MakedDate)
-                    .HasColumnType("date")
-                    .HasColumnName("makedDate");
+                entity.Property(e => e.IsRemuved).HasColumnName("isRemuved");
 
-                entity.Property(e => e.NewStatus)
+                entity.Property(e => e.NewRecord)
                     .HasMaxLength(50)
-                    .IsUnicode(false)
-                    .HasColumnName("newStatus");
+                    .HasColumnName("newRecord");
 
-                entity.Property(e => e.OldStatus)
+                entity.Property(e => e.Note)
+                    .HasMaxLength(100)
+                    .HasColumnName("note");
+
+                entity.Property(e => e.OldRecord)
                     .HasMaxLength(50)
-                    .IsUnicode(false)
-                    .HasColumnName("oldStatus");
+                    .HasColumnName("oldRecord");
 
-                entity.Property(e => e.StaffingId).HasColumnName("staffingID");
+                entity.Property(e => e.StaffingID).HasColumnName("staffingID");
 
-                entity.Property(e => e.WorkerId).HasColumnName("workerID");
-
-                entity.HasOne(d => d.ImpactType)
-                    .WithMany(p => p.Archives)
-                    .HasForeignKey(d => d.ImpactTypeId)
-                    .HasConstraintName("FK_Archive_ImpactTypes");
-
-                entity.HasOne(d => d.Staffing)
-                    .WithMany(p => p.Archives)
-                    .HasForeignKey(d => d.StaffingId)
-                    .HasConstraintName("FK_Archive_Staffing");
-
-                entity.HasOne(d => d.Worker)
-                    .WithMany(p => p.Archives)
-                    .HasForeignKey(d => d.WorkerId)
-                    .HasConstraintName("FK_Archive_Worker");
+                entity.Property(e => e.WorkerID).HasColumnName("workerID");
             });
 
             modelBuilder.Entity<Company>(entity =>
@@ -104,6 +87,8 @@ namespace PersonnelRecordsServer.db
                     .HasMaxLength(300)
                     .IsUnicode(false)
                     .HasColumnName("description");
+
+                entity.Property(e => e.IsRemuved).HasColumnName("isRemuved");
 
                 entity.Property(e => e.Name)
                     .HasMaxLength(50)
@@ -135,6 +120,8 @@ namespace PersonnelRecordsServer.db
                     .HasColumnType("date")
                     .HasColumnName("expirationDate");
 
+                entity.Property(e => e.IsRemuved).HasColumnName("isRemuved");
+
                 entity.Property(e => e.ReceiptDate)
                     .HasColumnType("date")
                     .HasColumnName("receiptDate");
@@ -150,6 +137,8 @@ namespace PersonnelRecordsServer.db
                 entity.ToTable("Experience");
 
                 entity.Property(e => e.Id).HasColumnName("id");
+
+                entity.Property(e => e.IsRemuved).HasColumnName("isRemuved");
 
                 entity.Property(e => e.PositionName)
                     .HasMaxLength(50)
@@ -189,6 +178,8 @@ namespace PersonnelRecordsServer.db
                     .IsUnicode(false)
                     .HasColumnName("divisionСode");
 
+                entity.Property(e => e.IsRemuved).HasColumnName("isRemuved");
+
                 entity.Property(e => e.IssuedBy)
                     .HasMaxLength(100)
                     .IsUnicode(false)
@@ -220,6 +211,8 @@ namespace PersonnelRecordsServer.db
                 entity.Property(e => e.Id).HasColumnName("id");
 
                 entity.Property(e => e.CompanyId).HasColumnName("companyID");
+
+                entity.Property(e => e.IsRemuved).HasColumnName("isRemuved");
 
                 entity.Property(e => e.Note)
                     .HasMaxLength(100)
@@ -260,6 +253,8 @@ namespace PersonnelRecordsServer.db
                     .HasMaxLength(50)
                     .IsUnicode(false)
                     .HasColumnName("email");
+
+                entity.Property(e => e.IsRemuved).HasColumnName("isRemuved");
 
                 entity.Property(e => e.Name)
                     .HasMaxLength(50)

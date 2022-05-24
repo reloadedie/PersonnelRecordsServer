@@ -4,6 +4,7 @@ using System.Collections.Generic;
 #nullable disable
 
 namespace PersonnelRecordsServer.db
+
 {
     public partial class Company
     {
@@ -18,6 +19,7 @@ namespace PersonnelRecordsServer.db
         public string Adress { get; set; }
         public string Phone { get; set; }
         public string Description { get; set; }
+        public bool? IsRemuved { get; set; }
 
         public virtual ICollection<Staffing> Staffings { get; set; }
     }

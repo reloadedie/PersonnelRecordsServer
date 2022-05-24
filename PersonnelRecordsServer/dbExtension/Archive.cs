@@ -13,14 +13,14 @@ namespace PersonnelRecordsServer.db
             return new ArchiveApi
             {
                 Id = archive.Id,
-                MakedDate = archive.MakedDate,
-                NewStatus = archive.NewStatus,
-                OldStatus = archive.OldStatus,
-                DateStart = archive.DateStart,
-                DateEnd = archive.DateEnd,
-                StaffingId = archive.StaffingId,
-                ImpactTypeId = archive.ImpactTypeId,
-                WorkerId = archive.WorkerId
+                //MakedDate = archive.MakedDate,
+                NewRecord = archive.NewRecord,
+                OldRecord = archive.OldRecord,
+                Note = archive.Note,
+                DateArchive = archive.DateArchive,
+                StaffingID = archive.StaffingID,
+                ImpactTypeID = archive.ImpactTypeID,
+                WorkerID = archive.WorkerID
             };
         }
 
@@ -29,14 +29,14 @@ namespace PersonnelRecordsServer.db
             return new Archive
             {
                 Id = archive.Id,
-                MakedDate = archive.MakedDate,
-                NewStatus = archive.NewStatus,
-                OldStatus = archive.OldStatus,
-                DateStart = archive.DateStart,
-                DateEnd = archive.DateEnd,
-                StaffingId = archive.StaffingId,
-                ImpactTypeId = archive.ImpactTypeId,
-                WorkerId = archive.WorkerId
+                //MakedDate = archive.MakedDate,
+                NewRecord = archive.NewRecord,
+                OldRecord = archive.OldRecord,
+                Note = archive.Note,
+                DateArchive = archive.DateArchive,
+                StaffingID = archive.StaffingID,
+                ImpactTypeID = archive.ImpactTypeID,
+                WorkerID = archive.WorkerID
             };
         }
     }

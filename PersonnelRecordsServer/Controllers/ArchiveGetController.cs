@@ -23,27 +23,27 @@ namespace PersonnelRecordsServer.Controllers
         [HttpPost]
         public async Task<ActionResult<WorkerExp>> Post([FromBody] WorkerExpGetDates dates)
         {
-            var worker = dbContext.Workers.FirstOrDefault(s => s.Id == dates.Worker.Id);
-            if (worker == null)
-                return NotFound();
+            //var worker = dbContext.Workers.FirstOrDefault(s => s.Id == dates.Worker.Id);
+            //if (worker == null)
+            //    return NotFound();
             var result = new WorkerExp();
-            var expList = dbContext.Archives.
-                Where(s=>s.WorkerId == worker.Id).
-                Include(s=>s.Staffing).
-                Where(s=>s.Staffing.Position == dates.Postion).
-                Include(s => s.Staffing.Company).
-                OrderBy(s=>s.MakedDate).
-                ToList();
+            //var expList = dbContext.Archives.
+            //    Where(s=>s.WorkerId == worker.Id).
+            //    Include(s=>s.StaffingID).
+            //    Where(s=>s.StaffingID.Position == dates.Postion).
+            //    Include(s => s.staffingID.Company).
+            //    OrderBy(s=>s.MakedDate).
+            //    ToList();
             result.Worker = dates.Worker;
-            foreach (var exp in expList)
-            {
-                var row = new WorkerCompanyExp { 
-                    Company = (CompanyApi)exp.Staffing.Company,
-                    Start = exp.DateStart,
-                    End = exp.DateEnd
-                };
-                result.History.Add(row);
-            }
+            //foreach (var exp in expList)
+            //{
+            //    var row = new WorkerCompanyExp { 
+            //        Company = (CompanyApi)exp.Staffing.Company,
+            //        Start = exp.DateStart,
+            //        End = exp.DateEnd
+            //    };
+            //    result.History.Add(row);
+            //}
             return Ok(result);
         }
     }

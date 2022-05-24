@@ -8,17 +8,14 @@ namespace PersonnelRecordsServer.db
     public partial class Archive
     {
         public int Id { get; set; }
-        public DateTime? MakedDate { get; set; }
-        public string NewStatus { get; set; }
-        public string OldStatus { get; set; }
-        public DateTime? DateStart { get; set; }
-        public DateTime? DateEnd { get; set; }
-        public int? StaffingId { get; set; }
-        public int? ImpactTypeId { get; set; }
-        public int? WorkerId { get; set; }
-
-        public virtual ImpactType ImpactType { get; set; }
-        public virtual Staffing Staffing { get; set; }
-        public virtual Worker Worker { get; set; }
+        public string OldRecord { get; set; }
+        public string NewRecord { get; set; }
+        public string Note { get; set; }
+        public int? ImpactTypeID { get; set; }
+        public int? WorkerID { get; set; }
+        public bool? IsRemuved { get; set; }
+        public int? StaffingID { get; set; }
+        public DateTime? DateArchive { get; set; }
+        public int? IdRecord { get; set; }
     }
 }
