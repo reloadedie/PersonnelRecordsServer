@@ -25,7 +25,7 @@ namespace PersonnelRecordsServer.Controllers
         [HttpGet]
         public IEnumerable<PassportApi> Get()
         {
-            return dbContext.Passports.Select(s => (PassportApi)s);
+            return dbContext.Passports.Where(s => s.IsRemuved != 1).Select(s => (PassportApi)s);
         }
 
         // GET api/<PassportController>/5

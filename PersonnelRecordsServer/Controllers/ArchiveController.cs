@@ -24,8 +24,8 @@ namespace PersonnelRecordsServer.Controllers
         // GET: api/<ArchiveController>
         [HttpGet]
         public IEnumerable<ArchiveApi> Get()
-        {
-            return dbContext.Archives.Select(s => (ArchiveApi)s);
+        {           
+            return dbContext.Archives.Where(s => s.IsRemuved != 1).Select(s => (ArchiveApi)s);
         }
 
         // GET api/<ArchiveController>/5

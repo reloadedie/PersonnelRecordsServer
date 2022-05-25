@@ -24,7 +24,7 @@ namespace PersonnelRecordsServer.Controllers
         [HttpGet]
         public IEnumerable<ExperienceApi> Get()
         {
-            return dbContext.Experiences.Select(s => (ExperienceApi)s);
+            return dbContext.Experiences.Where(s => s.IsRemuved != 1).Select(s => (ExperienceApi)s);
         }
 
         // GET api/<ExperienceController>/5

@@ -25,7 +25,8 @@ namespace PersonnelRecordsServer.Controllers
         [HttpGet]
         public IEnumerable<WorkerApi> Get()
         {
-            return dbContext.Workers.Select(s => (WorkerApi)s);
+            return dbContext.Workers.Where(s => s.IsRemuved != 1).Select(s => (WorkerApi)s);
+            return dbContext.Workers.Where(s => s.IsRemuved == 1).Select(s => (WorkerApi)s);
         }
 
         // GET api/<WorkerController>/5

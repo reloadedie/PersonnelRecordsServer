@@ -22,10 +22,23 @@ namespace PersonnelRecordsServer.Controllers
         }
 
         // GET: api/<CompanyController>
+        //[HttpGet]
+        //public IEnumerable<CompanyApi> Get()
+        //{
+        //    return dbContext.Companies.Select(s => (CompanyApi)s);
+        //    //return dbContext.Workers.Select(s => (WorkerApi)s);
+        //}
         [HttpGet]
         public IEnumerable<CompanyApi> Get()
+        {            
+                
+            return dbContext.Companies.Select(s => (CompanyApi)s); ;
+            //return dbContext.Companies.Where(s => s.IsRemuved != 1).Select(s => (CompanyApi)s);
+        }
+        [HttpDelete]
+        public IEnumerable<CompanyApi> GetIsRemuved()
         {
-            return dbContext.Companies.Select(s => (CompanyApi)s);
+            return dbContext.Companies.Where(s => s.IsRemuved == 1).Select(s => (CompanyApi)s);
         }
 
 
@@ -36,7 +49,7 @@ namespace PersonnelRecordsServer.Controllers
             var company = await dbContext.Companies.FindAsync(id);
             if (company == null)
                 return NotFound();
-            return Ok(company);
+            return Ok(company);           
         }
 
 

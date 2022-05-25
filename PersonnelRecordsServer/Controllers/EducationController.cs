@@ -25,7 +25,7 @@ namespace PersonnelRecordsServer.Controllers
         [HttpGet]
         public IEnumerable<EducationApi> Get()
         {
-            return dbContext.Educations.Select(s => (EducationApi)s);
+            return dbContext.Educations.Where(s => s.IsRemuved != 1).Select(s => (EducationApi)s);
         }
 
         // GET api/<EducationController>/5
