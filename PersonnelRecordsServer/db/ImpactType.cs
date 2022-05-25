@@ -4,7 +4,6 @@ using System.Collections.Generic;
 #nullable disable
 
 namespace PersonnelRecordsServer.db
-
 {
     public partial class ImpactType
     {

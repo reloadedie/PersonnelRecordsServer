@@ -14,13 +14,19 @@ namespace PersonnelRecordsServer.db
             {
                 Id = archive.Id,
                 //MakedDate = archive.MakedDate,
-                NewRecord = archive.NewRecord,
-                OldRecord = archive.OldRecord,
-                Note = archive.Note,
-                DateArchive = archive.DateArchive,
-                StaffingID = archive.StaffingID,
-                ImpactTypeID = archive.ImpactTypeID,
-                WorkerID = archive.WorkerID
+                OneRecord = archive.OneRecord,
+                TwoRecord = archive.TwoRecord,
+                ThreeRecord = archive.ThreeRecord,
+                FourRecord = archive.FourRecord,
+                FiveRecord = archive.FiveRecord,
+                SixRecord = archive.SixRemuved,
+                SevenRecord = archive.SevenRecord,
+                EightRecord = archive.EightArchive,
+                NineRecord = archive.NineRecord,
+                TenRecord = archive.TenRecord,
+                DateRecord = archive.DateRecord
+
+
             };
         }
 
@@ -30,13 +36,17 @@ namespace PersonnelRecordsServer.db
             {
                 Id = archive.Id,
                 //MakedDate = archive.MakedDate,
-                NewRecord = archive.NewRecord,
-                OldRecord = archive.OldRecord,
-                Note = archive.Note,
-                DateArchive = archive.DateArchive,
-                StaffingID = archive.StaffingID,
-                ImpactTypeID = archive.ImpactTypeID,
-                WorkerID = archive.WorkerID
+                OneRecord = archive.OneRecord,
+                TwoRecord = archive.TwoRecord,
+                ThreeRecord = archive.ThreeRecord,
+                FourRecord = archive.FourRecord,
+                FiveRecord = archive.FiveRecord,
+                SixRemuved = archive.SixRecord,
+                SevenRecord = archive.SevenRecord,
+                EightArchive = archive.EightRecord,
+                NineRecord = archive.NineRecord,
+                TenRecord = archive.TenRecord,
+                DateRecord = archive.DateRecord,
             };
         }
     }

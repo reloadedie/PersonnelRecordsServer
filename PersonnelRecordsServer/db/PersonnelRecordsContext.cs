@@ -24,6 +24,7 @@ namespace PersonnelRecordsServer.db
         public virtual DbSet<ImpactType> ImpactTypes { get; set; }
         public virtual DbSet<Passport> Passports { get; set; }
         public virtual DbSet<Staffing> Staffings { get; set; }
+        public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<Worker> Workers { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -45,31 +46,27 @@ namespace PersonnelRecordsServer.db
 
                 entity.Property(e => e.Id).HasColumnName("id");
 
-                entity.Property(e => e.DateArchive)
-                    .HasColumnType("datetime")
-                    .HasColumnName("dateArchive");
+                entity.Property(e => e.DateRecord).HasColumnType("date");
 
-                entity.Property(e => e.IdRecord).HasColumnName("idRecord");
+                entity.Property(e => e.EightArchive).HasMaxLength(100);
 
-                entity.Property(e => e.ImpactTypeID).HasColumnName("impactTypeID");
+                entity.Property(e => e.FiveRecord).HasMaxLength(100);
 
-                entity.Property(e => e.IsRemuved).HasColumnName("isRemuved");
+                entity.Property(e => e.FourRecord).HasMaxLength(100);
 
-                entity.Property(e => e.NewRecord)
-                    .HasMaxLength(50)
-                    .HasColumnName("newRecord");
+                entity.Property(e => e.NineRecord).HasMaxLength(100);
 
-                entity.Property(e => e.Note)
-                    .HasMaxLength(100)
-                    .HasColumnName("note");
+                entity.Property(e => e.OneRecord).HasMaxLength(100);
 
-                entity.Property(e => e.OldRecord)
-                    .HasMaxLength(50)
-                    .HasColumnName("oldRecord");
+                entity.Property(e => e.SevenRecord).HasMaxLength(100);
 
-                entity.Property(e => e.StaffingID).HasColumnName("staffingID");
+                entity.Property(e => e.SixRemuved).HasMaxLength(100);
 
-                entity.Property(e => e.WorkerID).HasColumnName("workerID");
+                entity.Property(e => e.TenRecord).HasMaxLength(100);
+
+                entity.Property(e => e.ThreeRecord).HasMaxLength(100);
+
+                entity.Property(e => e.TwoRecord).HasMaxLength(100);
             });
 
             modelBuilder.Entity<Company>(entity =>
@@ -239,6 +236,33 @@ namespace PersonnelRecordsServer.db
                     .WithMany(p => p.Staffings)
                     .HasForeignKey(d => d.WorkerId)
                     .HasConstraintName("FK_Staffing_Worker1");
+            });
+
+            modelBuilder.Entity<User>(entity =>
+            {
+                entity.HasNoKey();
+
+                entity.ToTable("User");
+
+                entity.Property(e => e.Email)
+                    .HasMaxLength(25)
+                    .IsFixedLength(true);
+
+                entity.Property(e => e.Id)
+                    .ValueGeneratedOnAdd()
+                    .HasColumnName("id");
+
+                entity.Property(e => e.Login)
+                    .HasMaxLength(25)
+                    .IsFixedLength(true);
+
+                entity.Property(e => e.Password)
+                    .HasMaxLength(25)
+                    .IsFixedLength(true);
+
+                entity.Property(e => e.TypeUser)
+                    .HasMaxLength(25)
+                    .IsFixedLength(true);
             });
 
             modelBuilder.Entity<Worker>(entity =>

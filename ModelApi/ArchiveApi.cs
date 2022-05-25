@@ -7,16 +7,19 @@ using System.Threading.Tasks;
 namespace ModelApi
 {
     public class ArchiveApi : ApiBaseType
-    {
-        //public DateTime? MakedDate { get; set; }
-        public string NewRecord { get; set; }
-        public string OldRecord { get; set; }
-        public string Note { get; set; }
-        public int? ImpactTypeID { get; set; }
-        public int? WorkerID { get; set; }
-        public int? IsRemuved { get; set; }
-        public int? StaffingID { get; set; }        
-        public DateTime? DateArchive { get; set; }       
-       
+    {       
+        public string OneRecord { get; set; }
+        public string TwoRecord { get; set; }
+        public string ThreeRecord { get; set; }
+        public string FourRecord { get; set; }
+        public string FiveRecord { get; set; }
+        public string SixRecord { get; set; }
+        public string SevenRecord { get; set; }        
+        public string EightRecord { get; set; } 
+        public string NineRecord { get; set; }
+        public string TenRecord { get; set; }
+        public DateTime? DateRecord { get; set; }
+
+
     }
 }

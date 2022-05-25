@@ -5,7 +5,6 @@ using System.Collections.Generic;
 
 namespace PersonnelRecordsServer.db
 {
-
     public partial class Experience
     {
         public int Id { get; set; }
